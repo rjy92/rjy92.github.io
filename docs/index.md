@@ -27,9 +27,3 @@ features:
     details: 了解我，以及如何联系我
     link: /about
 ---
-
-## 最近更新
-
-- [示例：第一篇前端文章](/blog/frontend/example)
-- [示例：一篇随笔](/blog/notes/example)
-- [示例：剪辑入门笔记](/learn/video/example)

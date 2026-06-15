@@ -1,0 +1,15 @@
+/* 修复 Mermaid 节点/边文字底部被裁切：
+   foreignObject 默认 overflow:hidden，CJK 字体实际行高比测量值高，
+   导致最后一行被切。放开溢出并统一行高即可。 */
+.mermaid foreignObject {
+  overflow: visible;
+}
+
+.mermaid .nodeLabel,
+.mermaid .edgeLabel,
+.mermaid .label,
+.mermaid span.nodeLabel,
+.mermaid p {
+  line-height: 1.5;
+  white-space: normal;
+}

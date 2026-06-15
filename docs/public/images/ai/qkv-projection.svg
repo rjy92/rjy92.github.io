@@ -1,0 +1,89 @@
+<svg width="100%" viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Q、K、V 三路投影原理</title>
+  <desc>同一个 token 隐藏状态向量 h，经过三个独立参数矩阵 Wq、Wk、Wv，分别投影出 Query、Key、Value 向量，类比图书馆的搜索词、目录标签和正文内容。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- 左：h 向量 -->
+  <rect x="30" y="118" width="110" height="64" rx="10"
+        fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.2"/>
+  <text x="85" y="145" font-family="Inter,sans-serif" font-size="14" font-weight="600"
+        fill="#4C1D95" text-anchor="middle">隐藏状态 h</text>
+  <text x="85" y="165" font-family="Inter,sans-serif" font-size="12"
+        fill="#6D28D9" text-anchor="middle">token 向量</text>
+
+  <!-- 三条路径 -->
+  <!-- Q 路：上 -->
+  <path d="M140 140 C185 140 195 68 230 68"
+        fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="175" y="90" font-family="Inter,sans-serif" font-size="12"
+        fill="#DC2626" text-anchor="middle">× Wq</text>
+
+  <!-- K 路：中 -->
+  <line x1="140" y1="150" x2="230" y2="150"
+        stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="183" y="144" font-family="Inter,sans-serif" font-size="12"
+        fill="#2563EB" text-anchor="middle">× Wk</text>
+
+  <!-- V 路：下 -->
+  <path d="M140 160 C185 160 195 232 230 232"
+        fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="175" y="220" font-family="Inter,sans-serif" font-size="12"
+        fill="#059669" text-anchor="middle">× Wv</text>
+
+  <!-- Q 框 -->
+  <rect x="232" y="44" width="155" height="56" rx="8"
+        fill="#FEF2F2" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="309" y="67" font-family="Inter,sans-serif" font-size="14" font-weight="600"
+        fill="#991B1B" text-anchor="middle">Q（Query）</text>
+  <text x="309" y="87" font-family="Inter,sans-serif" font-size="12"
+        fill="#B91C1C" text-anchor="middle">当前 token 想查询什么</text>
+
+  <!-- K 框 -->
+  <rect x="232" y="122" width="155" height="56" rx="8"
+        fill="#EFF6FF" stroke="#2563EB" stroke-width="1.2"/>
+  <text x="309" y="145" font-family="Inter,sans-serif" font-size="14" font-weight="600"
+        fill="#1E3A8A" text-anchor="middle">K（Key）</text>
+  <text x="309" y="165" font-family="Inter,sans-serif" font-size="12"
+        fill="#1D4ED8" text-anchor="middle">当前 token 能被什么查到</text>
+
+  <!-- V 框 -->
+  <rect x="232" y="200" width="155" height="56" rx="8"
+        fill="#ECFDF5" stroke="#059669" stroke-width="1.2"/>
+  <text x="309" y="223" font-family="Inter,sans-serif" font-size="14" font-weight="600"
+        fill="#064E3B" text-anchor="middle">V（Value）</text>
+  <text x="309" y="243" font-family="Inter,sans-serif" font-size="12"
+        fill="#047857" text-anchor="middle">当前 token 携带的真实内容</text>
+
+  <!-- 分隔线 -->
+  <line x1="420" y1="30" x2="420" y2="290"
+        stroke="#D1D5DB" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 右侧：图书馆类比 -->
+  <text x="455" y="50" font-family="Inter,sans-serif" font-size="12" font-weight="600"
+        fill="#6B7280" letter-spacing="1">图书馆类比</text>
+
+  <!-- 类比行 -->
+  <text x="435" y="82" font-family="Inter,sans-serif" font-size="13" fill="#991B1B" font-weight="600">Q</text>
+  <text x="455" y="82" font-family="Inter,sans-serif" font-size="13" fill="#374151">→ 你的搜索关键词</text>
+
+  <text x="435" y="114" font-family="Inter,sans-serif" font-size="13" fill="#1D4ED8" font-weight="600">K</text>
+  <text x="455" y="114" font-family="Inter,sans-serif" font-size="13" fill="#374151">→ 书的目录标签（索引）</text>
+
+  <text x="435" y="146" font-family="Inter,sans-serif" font-size="13" fill="#047857" font-weight="600">V</text>
+  <text x="455" y="146" font-family="Inter,sans-serif" font-size="13" fill="#374151">→ 书的正文内容</text>
+
+  <line x1="430" y1="162" x2="700" y2="162" stroke="#E5E7EB" stroke-width="1"/>
+
+  <text x="435" y="185" font-family="Inter,sans-serif" font-size="12" fill="#6B7280">「天气」的 K  ≈  气象类标签</text>
+  <text x="435" y="205" font-family="Inter,sans-serif" font-size="12" fill="#6B7280">「天气」的 V  ≈  温度/降水语义</text>
+
+  <line x1="430" y1="220" x2="700" y2="220" stroke="#E5E7EB" stroke-width="1"/>
+
+  <text x="435" y="245" font-family="Inter,sans-serif" font-size="12" fill="#6B7280">K 用于被找到</text>
+  <text x="435" y="263" font-family="Inter,sans-serif" font-size="12" fill="#6B7280">V 用于被读取</text>
+  <text x="435" y="281" font-family="Inter,sans-serif" font-size="12" fill="#9CA3AF">→ 缓存的是 K 和 V，不缓存 Q</text>
+</svg>

@@ -2,10 +2,6 @@
 
 技术文章与日常随笔。
 
-## 前端
+## AI
 
-- [示例：第一篇前端文章](/blog/frontend/example)
-
-## 随笔
-
-- [示例：一篇随笔](/blog/notes/example)
+- [模型缓存策略详解](/blog/ai/model-cache-strategy)
