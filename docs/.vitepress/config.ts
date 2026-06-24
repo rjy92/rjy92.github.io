@@ -35,6 +35,7 @@ export default withMermaid(
             text: 'AI',
             collapsed: false,
             items: [
+              { text: '前端也能搞懂 RAG', link: '/blog/ai/frontend-rag' },
               { text: '模型缓存策略详解', link: '/blog/ai/model-cache-strategy' }
             ]
           }
